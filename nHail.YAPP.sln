@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "nHail.YAPP.Client", "Client\nHail.YAPP.Client.njsproj", "{B61AA247-4EBF-471D-A797-A444965B7114}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nHail.YAPP.Funcs", "Funcs\nHail.YAPP.Funcs.csproj", "{84032E2E-F5A0-4F86-B998-CC1779864AF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B61AA247-4EBF-471D-A797-A444965B7114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B61AA247-4EBF-471D-A797-A444965B7114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B61AA247-4EBF-471D-A797-A444965B7114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B61AA247-4EBF-471D-A797-A444965B7114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84032E2E-F5A0-4F86-B998-CC1779864AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84032E2E-F5A0-4F86-B998-CC1779864AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84032E2E-F5A0-4F86-B998-CC1779864AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84032E2E-F5A0-4F86-B998-CC1779864AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECE068F4-F494-4547-AD5E-DB8FD56F3226}
+	EndGlobalSection
+EndGlobal
