@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "nHail.YAPP.Funcs": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --pause-on-error --port 5200"
+    }
+  }
+}
