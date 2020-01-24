@@ -23,6 +23,7 @@
     "@typescript-eslint/parser": "^2.14.0",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
+    "jest-editor-support": "^27.1.1",
     "ts-jest": "^24.2.0",
     "tslib": "^1.10.0",
     "typescript": "^3.2.2"

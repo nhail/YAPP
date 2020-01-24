@@ -3,7 +3,7 @@
 import { spawn } from "child_process";
 import { join, resolve } from 'path';
 import { writeFileSync, readFileSync } from 'fs';
-//Read WebApi settings file to create proxy setting file for AngularCLI
+//Read Azure Funcs settings file to create proxy setting file for AngularCLI
 const currentDir = process.cwd();
 const apiSettingsPath = resolve(currentDir, "../Funcs/Properties/launchSettings.json");
 const apiSettingsContent = readFileSync(apiSettingsPath, { encoding: "utf8" }).replace(/^\uFEFF/, '');
