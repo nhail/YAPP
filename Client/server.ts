@@ -11,8 +11,8 @@ const apiSettingsContent = readFileSync(apiSettingsPath, { encoding: "utf8" }).r
 const apiSettings = JSON.parse(apiSettingsContent);
 let apiPort = "7071";
 if (apiSettings && apiSettings.profiles && apiSettings.profiles["nHail.YAPP.Funcs"] && apiSettings.profiles["nHail.YAPP.Funcs"].commandLineArgs) {
-    const apiSettingsPort = apiSettings.profiles["nHail.YAPP.Funcs"].commandLineArgs
-        .split("--").filter(function (x) {
+  const commandLineArgs: string = apiSettings.profiles["nHail.YAPP.Funcs"].commandLineArgs;
+  const apiSettingsPort = commandLineArgs.split("--").filter(function (x) {
             return x.startsWith("port ");
         })
         .reduce(function (acc, item) {
@@ -21,7 +21,7 @@ if (apiSettings && apiSettings.profiles && apiSettings.profiles["nHail.YAPP.Func
                 return detail[1];
             }
             return acc;
-        }, undefined);
+        }, "");
     if (apiSettingsPort) {
         apiPort = apiSettingsPort;
     }
@@ -35,6 +35,7 @@ const proxyData = {
         "secure": false
     }
 };
+
 writeFileSync(tempProxySettingFile, JSON.stringify(proxyData));
 
 

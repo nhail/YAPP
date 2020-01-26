@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "declaration": false,
+    "sourceMap": true,
+    "outDir": "./",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "files": [
+    "server.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src"
+  ]
+}

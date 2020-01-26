@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "nHail.YAPP.Client",
   "main": "server.js",
+  "type": "module",
   "author": {
-    "name": ""
+    "name": "Charles N Rice"
   },
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc --build tsconfig.yapp.json",
     "clean": "tsc --build --clean"
   },
   "devDependencies": {
@@ -26,7 +27,7 @@
     "jest-editor-support": "^27.1.1",
     "ts-jest": "^24.2.0",
     "tslib": "^1.10.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "@angular/animations": "^8.2.14",
