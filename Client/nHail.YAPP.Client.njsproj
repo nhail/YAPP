@@ -36,6 +36,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="src\app\login\login.component.css" />
+    <Content Include="src\app\login\login.component.html" />
     <Content Include="tsconfig.yapp.json" />
     <None Include="server.ts" />
     <Content Include=".editorconfig" />
@@ -53,6 +55,8 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\app\login\" />
+    <Folder Include="src\app\security\" />
     <Folder Include="test\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
@@ -63,6 +67,10 @@
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\security\security.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\security\security.service.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

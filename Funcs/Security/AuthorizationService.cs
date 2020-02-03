@@ -11,21 +11,27 @@ using System.Text;
 
 namespace nHail.YAPP.Funcs.Security
 {
-    public static class AuthorizationService
+    public class AuthorizationService
     {
-        public static string CreateJWT(User user)
+        private readonly ISettings settings;
+        public AuthorizationService(ISettings settings)
+        {
+            this.settings = settings;
+        }
+        
+        public string CreateJWT(User user)
         {
             var rsaSecurityKey = new RsaSecurityKey(RSA.Create(2048));
-            rsaSecurityKey.Rsa.FromXmlString(Settings.PrivateKey);
+            rsaSecurityKey.Rsa.FromXmlString(settings.PrivateKey);
             var handler = new JsonWebTokenHandler();
             var now = DateTime.UtcNow;
             var descriptor = new SecurityTokenDescriptor
             {
-                Issuer = Settings.Issuer,
-                Audience = Settings.Audience,
+                Issuer = settings.Issuer,
+                Audience = settings.Audience,
                 IssuedAt = now,
                 NotBefore = now,
-                Expires = now.AddHours(11),
+                Expires = now.Add(settings.TimeToLive),
                 Subject = new ClaimsIdentity(GetClaims(user)),
                 SigningCredentials = new SigningCredentials(rsaSecurityKey, SecurityAlgorithms.RsaSsaPssSha384)
             };
@@ -33,9 +39,9 @@ namespace nHail.YAPP.Funcs.Security
             return handler.CreateToken(descriptor);
         }
 
-        private static IEnumerable<Claim> GetClaims(User user)
+        private IEnumerable<Claim> GetClaims(User user)
         {
-            yield return new Claim("x-functions-key", Settings.FunctionId);
+            yield return new Claim("x-functions-key", settings.FunctionId);
             yield return new Claim("x-sessionId", user.SessionId.Encode());
             yield return new Claim("sub", user.Id.ToString("N"));
             yield return new Claim("x-name", user.Name);

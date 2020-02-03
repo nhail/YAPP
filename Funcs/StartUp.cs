@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using nHail.YAPP.Funcs.Configurations;
+using nHail.YAPP.Funcs.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,9 @@ namespace nHail.YAPP.Funcs
         public override void Configure(IFunctionsHostBuilder builder)
         {
             var services = builder.Services;
-
-            
-
-
-            File.WriteAllLines(@"c:\temp\services.txt", builder.Services
-                .Select(x => $"Service Type: {x.ServiceType} Implementation Type {x.ImplementationType}"));
+            services.AddSingleton<ISettings, Settings>()
+                .AddSingleton<AuthorizationService>()
+                .AddSingleton<AuthenticationService>();
         }
     }
 }

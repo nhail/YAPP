@@ -9,21 +9,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-using NHail.PlanningPoker.Functions.Security;
-using NHail.PlanningPoker.Functions.T4;
+using nHail.YAPP.Funcs.Configurations;
+using nHail.YAPP.Funcs.T4;
 
 
 namespace NHail.PlanningPoker.Functions
 {
-    public static class SecurityFuncs
+    public class SecurityFuncs
     {
 
+        private readonly ISettings settings;
+        public SecurityFuncs(ISettings settings)
+        {
+            this.settings = settings;
+        }
+
         [FunctionName("JWKS-Func")]
-        public static IActionResult JWKS(
+        public IActionResult JWKS(
             [HttpTrigger(AuthorizationLevel.Anonymous, HttpVerbs.Get, Route = "jwks.json")] HttpRequest req,
             ILogger log)
         {
-            var xdoc = XDocument.Parse(Settings.PublicKey);
+            var xdoc = XDocument.Parse(settings.PublicKey);
             var exponent = xdoc.Descendants().First(x => x.Name == "Exponent");
             var modulus = xdoc.Descendants().First(x => x.Name == "Modulus");
 
@@ -36,31 +42,12 @@ namespace NHail.PlanningPoker.Functions
                         kty = "RSA", 
                         use = "sig",
                         alg = "RSA256",
-                        kid = Settings.FunctionId, 
+                        kid = settings.FunctionId, 
                         e = exponent.Value,
-                        m = exponent.Value
+                        m = modulus.Value
                     }
                 }
             });
-        }
-
-        [FunctionName("CreateSession-Func")]
-        public static Task<IActionResult> CreateSession(
-            [HttpTrigger(AuthorizationLevel.Anonymous, HttpVerbs.Get, Route = null)] HttpRequest req,
-            ILogger log)
-        {
-            string name = req.Query["name"];
-            var jwttest = AuthorizationService.CreateJWT(new User()
-            {
-                Id = Guid.NewGuid(),
-                Name = name
-            });
-
-            log.Log(LogLevel.Information, $"Is Valid: {ValidationService.Validate(req)}");
-
-            return Task.FromResult<IActionResult>(name != null
-                ? (ActionResult)new OkObjectResult(new {jwttest})
-                : new BadRequestObjectResult("Please pass a name on the query string"));
         }
     }
 }

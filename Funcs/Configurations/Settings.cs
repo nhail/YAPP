@@ -2,13 +2,14 @@
 
 namespace nHail.YAPP.Funcs.Configurations
 {
-    internal static class Settings
+    internal class Settings : ISettings
     {
-        internal const string Issuer = "nhail.dev";
-        internal const string Audience = Issuer;
-        internal static string PublicKey = Environment.GetEnvironmentVariable("NHAIL_YAP_PUBLIC_KEY");
-        internal static string PrivateKey => Environment.GetEnvironmentVariable("NHAIL_YAP_PRIVATE_KEY");
-        internal const string FunctionId = "testfuntestfunc";
+        public string Issuer { get; } = "nhail.dev";
+        public string Audience { get; } = "nhail.dev";
+        public string PublicKey { get; } = Environment.GetEnvironmentVariable("NHAIL_YAPP_PUBLIC_KEY");
+        public string PrivateKey { get; } = Environment.GetEnvironmentVariable("NHAIL_YAPP_PRIVATE_KEY");
+        public string FunctionId { get; } = Environment.GetEnvironmentVariable("NHAIL_YAPP_FUNCTION_KEY");
+        public TimeSpan TimeToLive { get; } = TimeSpan.FromHours(11);
     }
 }
 
