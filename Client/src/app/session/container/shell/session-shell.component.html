@@ -1,0 +1,21 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div>
+            <mat-button (click)="setCurrentTab(sessionShellTabs.Create)">
+                Create session
+            </mat-button>
+            <mat-button (click)="setCurrentTab(sessionShellTabs.Join)">
+                Join session
+            </mat-button>
+                </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<div *ngIf="currentTab === sessionShellTabs.Create">
+    <yapp-session-create></yapp-session-create>
+</div>
+<div *ngIf="currentTab === sessionShellTabs.Join">
+    <yapp-session-join></yapp-session-join>
+</div>
+

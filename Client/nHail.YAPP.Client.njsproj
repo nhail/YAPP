@@ -36,8 +36,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="src\app\login\login.component.css" />
-    <Content Include="src\app\login\login.component.html" />
+    <Content Include="src\app\session\component\create\session-create.component.css" />
+    <Content Include="src\app\session\component\create\session-create.component.html" />
+    <Content Include="src\app\session\component\join\session-join.component.css" />
+    <Content Include="src\app\session\component\join\session-join.component.html" />
+    <Content Include="src\app\session\container\shell\session-shell.component.css" />
+    <Content Include="src\app\session\container\shell\session-shell.component.html" />
+    <Content Include="tsconfig.worker.json" />
     <Content Include="tsconfig.yapp.json" />
     <None Include="server.ts" />
     <Content Include=".editorconfig" />
@@ -55,8 +60,13 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\login\" />
-    <Folder Include="src\app\security\" />
+    <Folder Include="src\app\shared\" />
+    <Folder Include="src\app\session\" />
+    <Folder Include="src\app\session\component\create\" />
+    <Folder Include="src\app\session\component\join\" />
+    <Folder Include="src\app\session\container\" />
+    <Folder Include="src\app\session\component\" />
+    <Folder Include="src\app\session\container\shell\" />
     <Folder Include="test\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
@@ -67,10 +77,27 @@
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\login\login.component.ts" />
-    <TypeScriptCompile Include="src\app\security\security.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\security\security.service.ts" />
+    <TypeScriptCompile Include="src\app\app.worker.ts" />
+    <TypeScriptCompile Include="src\app\session\component\create\session-create.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\session\component\create\session-create.component.ts" />
+    <TypeScriptCompile Include="src\app\session\component\join\session-join.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\session\component\join\session-join.component.ts" />
+    <TypeScriptCompile Include="src\app\session\container\shell\session-shell-tabs.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\session\container\shell\session.shell.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\session\container\shell\session-shell.component.ts" />
+    <TypeScriptCompile Include="src\app\session\session-routing.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\session\session-service.spec.ts" />
+    <TypeScriptCompile Include="src\app\session\session-service.ts" />
+    <TypeScriptCompile Include="src\app\session\session.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\shared\user-interface.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
