@@ -1,21 +1,28 @@
 <div>
-    <mat-toolbar color="primary">
-        <mat-toolbar-row>
-            <div>
-            <mat-button (click)="setCurrentTab(sessionShellTabs.Create)">
-                Create session
-            </mat-button>
-            <mat-button (click)="setCurrentTab(sessionShellTabs.Join)">
-                Join session
-            </mat-button>
-                </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
-</div>
-<div *ngIf="currentTab === sessionShellTabs.Create">
-    <yapp-session-create></yapp-session-create>
-</div>
-<div *ngIf="currentTab === sessionShellTabs.Join">
-    <yapp-session-join></yapp-session-join>
+  <mat-toolbar color="primary" role="heading">
+    <mat-toolbar-row fxLayout="row">
+      <a mat-button (click)="setCurrentTab(sessionShellTabs.Create)" [disabled]="currentTab === sessionShellTabs.Create">
+        Create Session
+      </a>
+      <a mat-button (click)="setCurrentTab(sessionShellTabs.Join)" [disabled]="currentTab === sessionShellTabs.Join">
+        Join Session
+      </a>
+      <span fxFlex="grow"></span>
+      <div fxFlix="noshrink">
+        <button mat-icon-button (click)="setCurrentTab(sessionShellTabs.Info)">
+          <mat-icon>info</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </div>
 
+<div *ngIf="currentTab == sessionShellTabs.Create">
+  <yapp-session-create></yapp-session-create>
+</div>
+<div *ngIf="currentTab == sessionShellTabs.Join">
+  <yapp-session-join></yapp-session-join>
+</div>
+<div *ngIf="currentTab == sessionShellTabs.Info">
+  <yapp-shell-info></yapp-shell-info>
+</div>

@@ -38,6 +38,8 @@
   <ItemGroup>
     <Content Include="src\app\session\component\create\session-create.component.css" />
     <Content Include="src\app\session\component\create\session-create.component.html" />
+    <Content Include="src\app\session\component\info\shell-info.component.css" />
+    <Content Include="src\app\session\component\info\shell-info.component.html" />
     <Content Include="src\app\session\component\join\session-join.component.css" />
     <Content Include="src\app\session\component\join\session-join.component.html" />
     <Content Include="src\app\session\container\shell\session-shell.component.css" />
@@ -60,6 +62,7 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\app\session\component\info\" />
     <Folder Include="src\app\shared\" />
     <Folder Include="src\app\session\" />
     <Folder Include="src\app\session\component\create\" />
@@ -80,6 +83,8 @@
     <TypeScriptCompile Include="src\app\app.worker.ts" />
     <TypeScriptCompile Include="src\app\session\component\create\session-create.component.spec.ts" />
     <TypeScriptCompile Include="src\app\session\component\create\session-create.component.ts" />
+    <TypeScriptCompile Include="src\app\session\component\info\shell-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\session\component\info\shell-info.component.ts" />
     <TypeScriptCompile Include="src\app\session\component\join\session-join.component.spec.ts" />
     <TypeScriptCompile Include="src\app\session\component\join\session-join.component.ts" />
     <TypeScriptCompile Include="src\app\session\container\shell\session-shell-tabs.ts">

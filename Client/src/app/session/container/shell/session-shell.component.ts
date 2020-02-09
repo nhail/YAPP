@@ -6,7 +6,6 @@ import { SessionShellTabs } from './session-shell-tabs';
   styleUrls: ['./session-shell.component.css']
 })
 export class SessionShellComponent implements OnInit {
-
   private _currentTab: SessionShellTabs = SessionShellTabs.Create;
   get currentTab(): SessionShellTabs {
     return this._currentTab;

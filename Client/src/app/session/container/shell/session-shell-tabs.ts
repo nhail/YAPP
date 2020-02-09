@@ -1,6 +1,7 @@
 export enum SessionShellTabs {
   Create,
-  Join
+  Join,
+  Info
 };
 
 Object.freeze(SessionShellTabs);
