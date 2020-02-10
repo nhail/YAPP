@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SessionShellComponent } from './container/shell/session-shell.component';
 import { SessionCreateComponent } from './component/create/session-create.component';
@@ -11,6 +12,7 @@ import { ShellInfoComponent } from './component/info/shell-info.component';
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SessionRoutingModule,
     UserInterfaceModule
   ],

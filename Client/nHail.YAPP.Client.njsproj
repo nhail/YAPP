@@ -44,6 +44,9 @@
     <Content Include="src\app\session\component\join\session-join.component.html" />
     <Content Include="src\app\session\container\shell\session-shell.component.css" />
     <Content Include="src\app\session\container\shell\session-shell.component.html" />
+    <Content Include="src\deepblue-gray.scss">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="tsconfig.worker.json" />
     <Content Include="tsconfig.yapp.json" />
     <None Include="server.ts" />
@@ -83,10 +86,16 @@
     <TypeScriptCompile Include="src\app\app.worker.ts" />
     <TypeScriptCompile Include="src\app\session\component\create\session-create.component.spec.ts" />
     <TypeScriptCompile Include="src\app\session\component\create\session-create.component.ts" />
+    <TypeScriptCompile Include="src\app\session\component\create\session-create.messages.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\session\component\info\shell-info.component.spec.ts" />
     <TypeScriptCompile Include="src\app\session\component\info\shell-info.component.ts" />
     <TypeScriptCompile Include="src\app\session\component\join\session-join.component.spec.ts" />
     <TypeScriptCompile Include="src\app\session\component\join\session-join.component.ts" />
+    <TypeScriptCompile Include="src\app\session\component\join\session-join.messages.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\session\container\shell\session-shell-tabs.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -100,9 +109,13 @@
     <TypeScriptCompile Include="src\app\session\session.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\shared\PlayerType.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\user-interface.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\shared\ValidationHelpers.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

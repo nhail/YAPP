@@ -16,13 +16,14 @@
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
-
-<div *ngIf="currentTab == sessionShellTabs.Create">
-  <yapp-session-create></yapp-session-create>
-</div>
-<div *ngIf="currentTab == sessionShellTabs.Join">
-  <yapp-session-join></yapp-session-join>
-</div>
-<div *ngIf="currentTab == sessionShellTabs.Info">
-  <yapp-shell-info></yapp-shell-info>
+<div mat-app-background>
+  <div *ngIf="currentTab == sessionShellTabs.Create">
+    <yapp-session-create></yapp-session-create>
+  </div>
+  <div *ngIf="currentTab == sessionShellTabs.Join">
+    <yapp-session-join></yapp-session-join>
+  </div>
+  <div *ngIf="currentTab == sessionShellTabs.Info">
+    <yapp-shell-info></yapp-shell-info>
+  </div>
 </div>

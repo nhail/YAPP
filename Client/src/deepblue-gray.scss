@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-deep-blue: (
+ 50: #e0e9ef,
+ 100: #b3c7d7,
+ 200: #80a2bc,
+ 300: #4d7da1,
+ 400: #26618c,
+ 500: #004578,
+ 600: #003e70,
+ 700: #003665,
+ 800: #002e5b,
+ 900: #001f48,
+ A100: #7ca6ff,
+ A200: #4984ff,
+ A400: #1661ff,
+ A700: #0051fc,
+ contrast: (
+  50: $dark-primary-text,
+  100: $dark-primary-text,
+  200: $dark-primary-text,
+  300: $dark-primary-text,
+  400: $light-primary-text,
+  500: $light-primary-text,
+  600: $light-primary-text,
+  700: $light-primary-text,
+  800: $light-primary-text,
+  900: $light-primary-text,
+  A100: $dark-primary-text,
+  A200: $dark-primary-text,
+  A400: $light-primary-text,
+  A700: $light-primary-text,
+ )
+);
+
+$yapp-app-primary: mat-palette($mat-deep-blue);
+$yapp-app-accent: mat-palette($mat-blue-grey, A200, A100, A400);
+$yapp-app-warn: mat-palette($mat-red);
+
+$yapp-app-theme: mat-dark-theme($yapp-app-primary, $yapp-app-accent, $yapp-app-warn);
+
+@include angular-material-theme($yapp-app-theme);

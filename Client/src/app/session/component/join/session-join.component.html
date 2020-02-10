@@ -1,1 +1,23 @@
-session join
+<mat-card>
+  <form [formGroup]="joinFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-element" color="accent">
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-error *ngIf="(controls.name.dirty || controls.name.touched) && controls.name.invalid">
+        <div data-error-for="name" *ngFor="let error of (controls.name.errors) | keyvalue">
+          {{error.value.message}}
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element" color="accent">
+      <input matInput placeholder="Session Id" formControlName="sessionId">
+      <mat-error *ngIf="(controls.sessionId.dirty || controls.sessionId.touched) && controls.sessionId.invalid">
+        <div data-error-for="sessionId" *ngFor="let error of (controls.sessionId.errors) | keyvalue">
+          {{error.value.message}}
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <div class="form-element">
+      <button mat-raised-button color="accent" type="submit" class="button" [disabled]="!joinFormGroup.valid">Join Session</button>
+    </div>
+  </form>
+</mat-card>
